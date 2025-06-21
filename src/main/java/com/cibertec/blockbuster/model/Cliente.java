@@ -1,12 +1,17 @@
 package com.cibertec.blockbuster.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
+@Table(name = "cliente")
 public class Cliente {
 
     @Id
@@ -19,16 +24,7 @@ public class Cliente {
     @Column(nullable = false)
     private String email;
 
-    public Cliente() {
-    }
-
     public Cliente(String nombre, String email) {
-        this.nombre = nombre;
-        this.email = email;
-    }
-
-    public Cliente(Long id, String nombre, String email) {
-        this.id = id;
         this.nombre = nombre;
         this.email = email;
     }

@@ -1,12 +1,17 @@
 package com.cibertec.blockbuster.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
+@Table(name = "pelicula")
 public class Pelicula {
 
     @Id
@@ -20,17 +25,7 @@ public class Pelicula {
 
     private int stock;
 
-    public Pelicula() {
-    }
-
     public Pelicula(String titulo, String genero, int stock) {
-        this.titulo = titulo;
-        this.genero = genero;
-        this.stock = stock;
-    }
-
-    public Pelicula(Long id, String titulo, String genero, int stock) {
-        this.id = id;
         this.titulo = titulo;
         this.genero = genero;
         this.stock = stock;
